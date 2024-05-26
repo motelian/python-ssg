@@ -1,7 +1,7 @@
 import shutil
 import os
 from copystatic import copy_recursive
-from generate_page import generate_page
+from generate_content import generate_pages_recursive
 
 
 if __name__ == "__main__":
@@ -15,7 +15,7 @@ if __name__ == "__main__":
         os.mkdir(dest_dir_path)
     
     copy_recursive(src_dir_path, dest_dir_path)
-    generate_page("./content/index.md", "./template.html", "./public/index.html")
+    generate_pages_recursive("./content", "./template.html", "./public")
 
 
 
